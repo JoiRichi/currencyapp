@@ -64,15 +64,16 @@ def convert_currency(request):
             amount = value
             result = c.convert(from_country.upper(), to_country.upper(), amount)
             context = {'result': result,
+                       'form': form,
                        'error': 'wrong details provided',
                        }
-            return redirect('/result', context)
+            return render(request, 'input.html', context)
         except KeyError:
             context = {'form': form}
-            return render(request, 'input.html', context)
     else:
         context = {'form': form}
+
         return render(request, 'input.html', context)
 
 def get_result(request):
-    return render(request, 'result.html', {})
+    return render(request, 'result.html',)

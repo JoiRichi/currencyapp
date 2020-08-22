@@ -4,18 +4,65 @@
   <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <title>Inputs</title>
-</head>
-<body>
+  <style>
+    #body {
+    border: 200px, 10px;
+    margin: 5px;
+    padding: 100px;
+    background-color: SaddleBrown;
+    border-radius: 25px;
 
-  <form action="{}" method='post'>
+    }
+    .form {
+
+
+    }
+    #result {
+
+    }
+    form {text-color: white;
+    }
+    p{
+    color: white;
+    font-family: Asul;
+    }
+
+    }
+    label {
+  display: inline-block;
+  width: 140px;
+  text-align: right;
+}​
+  </style>
+</head>
+<body style="background-color: MintCream; padding: 100px;">
+<div id="body">
+  <h3 style="color:White; font-family: Bubblegum Sans ">This page gets you the <strong>current </strong> conversion rate worldwide!</h3>
+  <div>
+
+     <form action="" method='post'>
     {% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" value="Convert">
+    <input  type="submit" value="Convert">
 
   </form>
+  </div>
+  <div id="result" style="text-color: white; background-color: Green;
+    padding: 5px;margin: 20px; border-radius: 250px;"> <p style="text-align: center; font-size: 20px"> <strong>{{result}}</strong></p>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>
-
 
 
 
